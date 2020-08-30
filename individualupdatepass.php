@@ -10,11 +10,11 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 if(isset($postdata) && !empty($postdata)){
     $request = json_decode($postdata);
     $id = $_GET['id'];
-    $tenth = $request->SSC;
 
+    $passcategory = $request->pass;
     
 
-    $sql = "Update academic_details set SSC_percent='$tenth' where user_id='$id' ";
+    $sql = "Update academic_details set pass_category='$passcategory' where user_id='$id' ";
     if(mysqli_query($con, $sql)){
         
         http_response_code(202);
